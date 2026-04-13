@@ -206,6 +206,34 @@ export default function App() {
                       );
                     })}
                   </div>
+
+                  {/* Gallery Render */}
+                  {section.gallery && (
+                    <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {section.gallery.map((img, i) => (
+                        <motion.div 
+                          key={i}
+                          initial={{ opacity: 0, scale: 0.95 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: i * 0.1, duration: 0.5 }}
+                          className="group relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-900 aspect-[4/3]"
+                        >
+                          <img 
+                            src={img.url} 
+                            alt={img.caption} 
+                            className="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-500" 
+                            referrerPolicy="no-referrer" 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent opacity-80" />
+                          <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                            <div className="w-8 h-1 bg-brand-500 mb-3 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100" />
+                            <p className="text-white font-medium text-lg">{img.caption}</p>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
                 </motion.section>
               );
             })}
@@ -225,10 +253,15 @@ export default function App() {
             <p className="text-zinc-400 text-lg mb-8 max-w-xl mx-auto relative z-10">
               Esta propuesta es el primer paso para convertir el sitio web de Rimmer Lighting en el activo de ventas más poderoso de la empresa.
             </p>
-            <button className="relative z-10 inline-flex items-center gap-2 bg-white text-zinc-950 px-8 py-4 rounded-full font-semibold hover:bg-brand-50 transition-colors duration-200">
+            <a 
+              href="https://wa.me/523322223518?text=Hola,%20me%20interesa%20agendar%20una%20reuni%C3%B3n%20de%20kick-off%20para%20el%20proyecto%20de%20Rimmer%20Lighting."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 inline-flex items-center gap-2 bg-white text-zinc-950 px-8 py-4 rounded-full font-semibold hover:bg-brand-50 transition-colors duration-200"
+            >
               Agendar Reunión de Kick-off
               <ArrowRight className="w-5 h-5" />
-            </button>
+            </a>
           </motion.div>
 
         </div>

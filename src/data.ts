@@ -8,8 +8,16 @@ import {
   Blocks, 
   LineChart, 
   Award, 
-  CalendarDays 
+  CalendarDays
 } from 'lucide-react';
+
+export type Section = {
+  id: string;
+  title: string;
+  icon: any;
+  content: string[];
+  gallery?: { url: string; caption: string }[];
+};
 
 export const proposalData = {
   client: "Rimmer Lighting",
@@ -35,7 +43,7 @@ export const proposalData = {
       title: "2. Objetivos del Rediseño",
       icon: Target,
       content: [
-        "El nuevo sitio web no será solo un escaparate, sino una **herramienta de ventas y especificación** que trabaje 24/7. Los objetivos rectores son:",
+        "El nuevo sitio web no será solo un escaparate, sino una **herramienta de ventas y especificación** que trabaje de forma continua. Los objetivos rectores son:",
         "**1. Generación de Leads Calificados (B2B):** Implementar flujos que conviertan el tráfico anónimo en MQLs (Marketing Qualified Leads) y SQLs (Sales Qualified Leads) a través de formularios inteligentes.",
         "**2. Posicionamiento de Autoridad:** Transicionar la percepción de 'vendedores de lámparas' a 'Consultores Expertos en Soluciones de Iluminación Arquitectónica e Industrial'.",
         "**3. Facilitar la Especificación Técnica:** Convertir el sitio en la herramienta favorita de los arquitectos e ingenieros en México y Centroamérica, haciendo que especificar productos de Rimmer sea la opción más fácil y rápida del mercado."
@@ -62,7 +70,7 @@ export const proposalData = {
       title: "4. Descripción de Secciones Clave",
       icon: LayoutTemplate,
       content: [
-        "**Home orientado a conversión:** Hero section con video/render arquitectónico de alto impacto. Propuesta de valor clara en el primer segundo. Tres vías de navegación inmediatas: 'Soy Arquitecto', 'Soy Contratista', 'Soy Cliente Final'.",
+        "**Home orientado a conversión:** Hero section con video/render arquitectónico de alto impacto. Propuesta de valor clara de inmediato. Tres vías de navegación inmediatas: 'Soy Arquitecto', 'Soy Contratista', 'Soy Cliente Final'.",
         "**Catálogo Inteligente:** No es un e-commerce tradicional. Es un motor de especificación. Filtros por: Aplicación (Interior/Exterior), Tipo de Montaje, Temperatura de Color (CCT), Flujo Luminoso, y Certificaciones (LEED, WELL).",
         "**Página de Proyectos:** Formato 'Problema - Solución - Resultado'. Fotografías profesionales de gran formato. Listado exacto de las luminarias utilizadas en ese proyecto con enlaces directos al catálogo.",
         "**Página de Industrias:** Landing pages específicas. Un arquitecto de hospitales no busca lo mismo que un diseñador de retail. Mensajes, normativas y productos curados por sector.",
@@ -100,7 +108,7 @@ export const proposalData = {
         "Para que el sitio sea una máquina de ventas, debe conectarse con su stack tecnológico:",
         "• **CRM (HubSpot o Salesforce):** Sincronización bidireccional de leads. Cada formulario llenado crea un negocio en el pipeline de ventas automáticamente.",
         "• **Marketing Automation:** Integración con ActiveCampaign o Mailchimp para nutrir a los leads que descargan archivos IES pero aún no cotizan.",
-        "• **PIM (Product Information Management):** Si el catálogo es muy extenso, recomendamos integrar un PIM para que la actualización de fichas técnicas, lúmenes y SKUs se refleje en la web en tiempo real sin intervención manual.",
+        "• **PIM (Product Information Management):** Si el catálogo es muy extenso, recomendamos integrar un PIM para que la actualización de fichas técnicas, lúmenes y SKUs se refleje en la web de forma automática sin intervención manual.",
         "• **Analytics Avanzado:** Google Tag Manager y GA4 configurados para medir eventos clave (clics en 'Descargar PDF', envíos de formulario de cotización)."
       ]
     },
@@ -121,7 +129,7 @@ export const proposalData = {
       icon: Award,
       content: [
         "Mientras la competencia tiene catálogos en PDF obsoletos o sitios web genéricos, Rimmer Lighting destacará por:",
-        "• **Ser una Herramienta, no un Folleto:** El sitio le ahorra horas de trabajo al arquitecto al centralizar todos los recursos técnicos.",
+        "• **Ser una Herramienta, no un Folleto:** El sitio optimiza el trabajo del arquitecto al centralizar todos los recursos técnicos.",
         "• **Enfoque Consultivo Digital:** La web guía al usuario hacia la solución correcta mediante filtros inteligentes, replicando la experiencia de hablar con uno de sus ingenieros de ventas.",
         "• **Prueba Social Innegable:** Casos de éxito documentados con rigor técnico y estético que generan confianza inmediata en tomadores de decisión de alto nivel."
       ]
@@ -131,12 +139,12 @@ export const proposalData = {
       title: "10. Roadmap de Implementación",
       icon: CalendarDays,
       content: [
-        "Metodología ágil dividida en 4 fases (Tiempo estimado: 12-14 semanas):",
-        "• **Fase 1: Discovery & UX (Semanas 1-3):** Entrevistas con stakeholders, definición de buyer personas (Arquitecto, Contratista), wireframes de baja fidelidad y arquitectura de información.",
-        "• **Fase 2: UI & Branding Digital (Semanas 4-6):** Diseño visual de alta fidelidad, creación del sistema de diseño, prototipos interactivos y aprobación de look & feel.",
-        "• **Fase 3: Desarrollo Frontend & Backend (Semanas 7-11):** Programación a medida, integración de CMS para autogestión del catálogo, desarrollo de calculadoras/filtros e integraciones CRM.",
-        "• **Fase 4: QA, Contenido y Lanzamiento (Semanas 12-14):** Pruebas de estrés, revisión en múltiples dispositivos, optimización SEO técnica, capacitación al equipo de Rimmer y Go-Live."
+        "Metodología ágil dividida en 4 fases:",
+        "• **Fase 1: Discovery & UX:** Entrevistas con stakeholders, definición de buyer personas (Arquitecto, Contratista), wireframes de baja fidelidad y arquitectura de información.",
+        "• **Fase 2: UI & Branding Digital:** Diseño visual de alta fidelidad, creación del sistema de diseño, prototipos interactivos y aprobación de look & feel.",
+        "• **Fase 3: Desarrollo Frontend & Backend:** Programación a medida, integración de CMS para autogestión del catálogo, desarrollo de calculadoras/filtros e integraciones CRM.",
+        "• **Fase 4: QA, Contenido y Lanzamiento:** Pruebas de estrés, revisión en múltiples dispositivos, optimización SEO técnica, capacitación al equipo de Rimmer y Go-Live."
       ]
     }
-  ]
+  ] as Section[]
 };
